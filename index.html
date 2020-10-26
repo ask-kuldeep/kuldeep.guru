@@ -29,6 +29,9 @@
       defer
       src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
     ></script>
+    <noscript
+      ><link rel="stylesheet" href="/.netlify/functions/counter"
+    /></noscript>
     <title>Kuldeep Sharma - Guru</title>
   </head>
   <body>
@@ -43,4 +46,20 @@
       </div>
     </section>
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const count = () => {
+        fetch('/.netlify/functions/count')
+          .then((response) => response.text())
+          .then((data) => {
+            data = JSON.parse(data);
+            if (!data.success) {
+              count();
+            }
+          });
+      };
+
+      count();
+    });
+  </script>
 </html>

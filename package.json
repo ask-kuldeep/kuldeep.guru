@@ -1,0 +1,11 @@
+{
+  "name": "kuldeep.guru",
+  "version": "1.0.0",
+  "repository": "https://github.com/ask-kuldeep/kuldeep.guru.git",
+  "author": "Kuldeep Sharma",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "firebase": "^7.24.0"
+  }
+}
