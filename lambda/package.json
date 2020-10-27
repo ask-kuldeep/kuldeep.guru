@@ -1,0 +1,11 @@
+{
+  "name": "lambda",
+  "version": "1.0.0",
+  "author": "Kuldeep Sharma",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "firebase": "^7.24.0",
+    "netlify-lambda": "^2.0.1"
+  }
+}
