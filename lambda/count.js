@@ -13,12 +13,14 @@ exports.handler = async (_event, _context, callback) => {
       countable: true,
     })
     .then(() => {
-      return callback(null, { statusCode: 200, body: '{ "success": true }' });
+      result = callback(null, { statusCode: 200, body: '{ "success": true }' });
     })
     .catch((error) => {
-      return callback(null, {
+      result = callback(null, {
         statusCode: 200,
         body: JSON.stringify({ error }),
       });
     });
+
+  return result;
 };
