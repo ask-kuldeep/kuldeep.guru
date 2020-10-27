@@ -5,8 +5,6 @@ const app = require('./app');
 const db = firebase.firestore(app);
 
 exports.handler = (_event, _context, callback) => {
-  let result;
-
   db.collection('counter')
     .get()
     .then((data) => {
@@ -15,7 +13,7 @@ exports.handler = (_event, _context, callback) => {
         .filter((count) => count.countable)
         .length.toString();
 
-      callback(null, {
+      return callback(null, {
         statusCode: 200,
         body: JSON.stringify({ counts }),
       });
