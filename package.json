@@ -9,12 +9,11 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "firebase": "^7.24.0",
-    "netlify-lambda": "^2.0.1"
+    "firebase": "^8.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
     "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1"
   }
 }
