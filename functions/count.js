@@ -24,7 +24,7 @@ exports.handler = (_a, _b, callback) => {
     .then(() => {
       callback(null, { statusCode: 200, body: '{ "success": true }' });
     })
-    .catch((err) => {
-      callback(null, { statusCode: 200, body: '{ "error": err }' });
+    .catch((error) => {
+      callback(null, { statusCode: 500, body: JSON.stringify({ error }) });
     });
 };
