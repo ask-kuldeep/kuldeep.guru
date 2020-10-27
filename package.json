@@ -2,8 +2,7 @@
   "name": "kuldeep.guru",
   "version": "1.0.0",
   "scripts": {
-    "build": "babel src -d dist",
-    "postinstall": "cd lambda & yarn install"
+    "build": "cd lambda && yarn install && cd .. && babel src -d dist"
   },
   "repository": "https://github.com/ask-kuldeep/kuldeep.guru.git",
   "author": "Kuldeep Sharma",
