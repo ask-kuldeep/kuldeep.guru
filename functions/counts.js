@@ -16,17 +16,22 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-exports.handler = (_a, _b, callback) => {
-  db.collection('counter')
+exports.handler = async (_event, _context, callback) => {
+  let result;
+
+  await db
+    .collection('counter')
     .get()
     .then((data) => {
       const counts = data.docs
         .map((count) => count.data())
         .filter((count) => count.countable)
         .length.toString();
-      callback(null, {
+      result = callback(null, {
         statusCode: 200,
         body: JSON.stringify({ counts }),
       });
     });
+
+  return result;
 };

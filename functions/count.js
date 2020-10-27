@@ -16,15 +16,23 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-exports.handler = (_a, _b, callback) => {
-  db.collection('counter')
+exports.handler = async (_event, _context, callback) => {
+  let result;
+
+  await db
+    .collection('counter')
     .add({
       countable: true,
     })
     .then(() => {
-      callback(null, { statusCode: 200, body: '{ "success": true }' });
+      result = callback(null, { statusCode: 200, body: '{ "success": true }' });
     })
     .catch((error) => {
-      callback(null, { statusCode: 500, body: JSON.stringify({ error }) });
+      result = callback(null, {
+        statusCode: 500,
+        body: JSON.stringify({ error }),
+      });
     });
+
+  return result;
 };
