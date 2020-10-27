@@ -1,4 +1,4 @@
 [build]
   publish = "dist/"
-  command = "yarn run-all build:*"
+  command = "npm-run-all build:*"
   functions="lambda"
