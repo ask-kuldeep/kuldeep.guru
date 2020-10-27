@@ -2,9 +2,9 @@
   "name": "kuldeep.guru",
   "version": "1.0.0",
   "scripts": {
-    "build": "babel src -d dist",
-    "lambda-serve": "netlify-lambda serve functions",
-    "lambda-build": "netlify-lambda build functions"
+    "build:public": "babel src -d dist",
+    "build:lambda": "netlify-lambda build functions",
+    "serve:lambda": "netlify-lambda serve functions"
   },
   "repository": "https://github.com/ask-kuldeep/kuldeep.guru.git",
   "author": "Kuldeep Sharma",
@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-latest": "^6.24.1"
+    "babel-preset-latest": "^6.24.1",
+    "yarn-run-all": "^3.1.1"
   }
 }

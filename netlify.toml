@@ -1,4 +1,4 @@
 [build]
   publish = "dist/"
-  command = "yarn build && yarn lambda-build"
+  command = "yarn-run-all build:*"
   functions="lambda"
