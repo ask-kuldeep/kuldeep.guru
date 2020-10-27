@@ -27,11 +27,12 @@ exports.handler = async (_event, _context, callback) => {
         .map((count) => count.data())
         .filter((count) => count.countable)
         .length.toString();
-      result = callback(null, {
-        statusCode: 200,
-        body: JSON.stringify({ counts }),
-      });
+
+      result = JSON.stringify({ counts });
     });
 
-  return result;
+  return callback(null, {
+    statusCode: 200,
+    body: result,
+  });
 };
