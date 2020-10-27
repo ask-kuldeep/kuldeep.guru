@@ -4,11 +4,10 @@ const app = require('./app');
 
 const db = firebase.firestore(app);
 
-exports.handler = async (_event, _context, callback) => {
+exports.handler = (_event, _context, callback) => {
   let result;
 
-  await db
-    .collection('counter')
+  db.collection('counter')
     .get()
     .then((data) => {
       const counts = data.docs
@@ -17,10 +16,9 @@ exports.handler = async (_event, _context, callback) => {
         .length.toString();
 
       result = JSON.stringify({ counts });
+      callback(null, {
+        statusCode: 200,
+        body: result,
+      });
     });
-
-  return callback(null, {
-    statusCode: 200,
-    body: result,
-  });
 };
