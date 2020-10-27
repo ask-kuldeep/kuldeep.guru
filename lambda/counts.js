@@ -15,10 +15,9 @@ exports.handler = (_event, _context, callback) => {
         .filter((count) => count.countable)
         .length.toString();
 
-      result = JSON.stringify({ counts });
       callback(null, {
         statusCode: 200,
-        body: result,
+        body: JSON.stringify({ counts }),
       });
     });
 };
