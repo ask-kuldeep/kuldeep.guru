@@ -4,8 +4,7 @@
   "scripts": {
     "build:public": "babel src -d dist",
     "build:lambda": "netlify-lambda build functions",
-    "serve:lambda": "netlify-lambda serve functions",
-    "run-all": "yarn-run-all"
+    "serve:lambda": "netlify-lambda serve functions"
   },
   "repository": "https://github.com/ask-kuldeep/kuldeep.guru.git",
   "author": "Kuldeep Sharma",
