@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "babel src -d dist",
-    "preinstall": "cd lambda & yarn install"
+    "prebuild": "cd lambda & yarn install"
   },
   "repository": "https://github.com/ask-kuldeep/kuldeep.guru.git",
   "author": "Kuldeep Sharma",
