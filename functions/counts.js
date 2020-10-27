@@ -24,7 +24,7 @@ exports.handler = (_a, _b, callback) => {
         .map((count) => count.data())
         .filter((count) => count.countable)
         .length.toString();
-      result = callback(null, {
+      callback(null, {
         statusCode: 200,
         body: JSON.stringify({ counts }),
       });
